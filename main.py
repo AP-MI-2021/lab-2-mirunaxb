@@ -66,3 +66,32 @@ def test_is_superprime():
     assert is_superprime(237) == 0
 
 test_is_superprime()
+
+
+def main():
+    print('''
+	    (1.) Largest prime below
+	    (6.) Superprime
+	    (12.) Perfect squares
+	''')
+    while True:
+        x = int(input("Comanda:"))
+        if (x == 1):
+            # Largest prime below
+            n = int(input("Introduceti n="))
+            print(get_largest_prime_below(n))
+        if (x == 2):
+            # Perfect squares
+            n = int(input("Introduceti n="))
+            list = []
+            for i in range(0, n):
+                el = int(input())
+                list.append(el)
+            print(list)
+            print(get_perfect_squares(list))
+        if (x == 3):
+            # Superprime
+            n = int(input("Introduceti n="))
+            print(is_superprime(n))
+if __name__ == '__main__':
+    main()

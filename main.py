@@ -18,6 +18,7 @@ def test_get_largest_prime_below():
     assert get_largest_prime_below(50) == 47
 
 test_get_largest_prime_below()
+
 '''
 Afișează toate pătratele perfecte dintr-un interval închis dat.
 '''
@@ -42,3 +43,26 @@ def test_get_perfect_squares():
 
 test_get_perfect_squares()
 
+'''
+Determinare numar superprim.
+'''
+
+def is_superprime(n):
+    ok = 1
+    while n:
+        d = 0
+        for i in range(1 , int(n)):
+            if n % i == 0:
+                d = d + 1
+        if d > 2:
+            ok = 0
+        n = n / 10
+    if ok == 1:
+        return True
+    return False
+
+def test_is_superprime():
+    assert is_superprime(233) == 1
+    assert is_superprime(237) == 0
+
+test_is_superprime()
